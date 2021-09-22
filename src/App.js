@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { CssBaseline, Container } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import "./App.css";
+import Cards from "./component/Cards";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    padding: "40px 0px",
+  },
+}));
 
 function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CssBaseline />
+      <Container className={classes.root} maxWidth="md">
+        <Cards />
+      </Container>
+    </>
   );
 }
 
